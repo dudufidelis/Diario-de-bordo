@@ -13,26 +13,19 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Diário de Bordo</title>
 </head>
 <body>
-    <div class="container mt-4">
-        <h1>Diário de Bordo</h1>
-        
-        <!-- Formulário para adicionar mensagem -->
+    <div class="conteiner-diario">
+        <h1>Diário CPD</h1>
         <form action="adicionar_mensagem.php" method="post">
-            <div class="mb-3">
-                <label for="mensagem" class="form-label">Nova Mensagem</label>
-                <input type="text" class="form-control" id="mensagem" name="mensagem">
-            </div>
-            <button type="submit" class="btn btn-primary">Adicionar Mensagem</button>
+                <textarea type="text" name="mensagem" placeholder="Deixe sua mensagem aqui!"></textarea>
+                <button type="submit">Enviar</button>
         </form>
-        
-        <hr>
-        
+
         <!-- Exibir a última mensagem -->
-        <h2>Última Mensagem</h2>
+        <h2>Últimas Mensagens</h2>
         <?php include 'ultima_mensagem.php'; ?>
         
         <hr>

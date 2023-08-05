@@ -4,28 +4,30 @@
     }
     ?>
 
-<!DOCTYPE html>
-<html>
-<head>
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100 h-screen flex items-center justify-center">
-    <div class="bg-white p-8 rounded shadow-md">
-        <h2 class="text-2xl mb-4">Login</h2>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  </head>
+  <body>
+    <div class="aviso">
+        <h1>Projeto em<br>desenvolvimento</h1>
+    </div>
+
+    <div class="conteiner">
+        <span class="material-symbols-outlined">
+            menu_book
+        </span>
         <form action="login.php" method="post">
-            <div class="mb-4">
-                <label for="username" class="block text-sm font-medium text-gray-700">Username:</label>
-                <input type="text" id="username" name="username" required class="mt-1 p-2 w-full rounded-md border border-gray-300">
-            </div>
-            
-            <div class="mb-4">
-                <label for="password" class="block text-sm font-medium text-gray-700">Password:</label>
-                <input type="password" id="password" name="password" required class="mt-1 p-2 w-full rounded-md border border-gray-300">
-            </div>
-            
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Login</button>
+                <input type="text" name="username" placeholder="Usuário">        
+                <input type="password" name="password" placeholder="Senha">
+                <button type="submit">Entrar</button>
         </form>
     </div>
-</body>
+  </body>
 </html>
+

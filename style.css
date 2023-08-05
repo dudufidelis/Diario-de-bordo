@@ -1,0 +1,133 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+.conteiner {
+    background-color: rgba(17, 201, 214, 0.404);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    margin: 60px auto;
+    width: 250px;
+    height: 300px;
+}
+
+.conteiner span {
+    font-size: 66px;
+    padding: 10px;
+    color: white;
+}
+
+.conteiner form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+}
+
+.conteiner form ::placeholder {
+    font-size: 12px;
+    text-align: center;
+}
+
+
+.conteiner form input {
+    width: 100;
+    border: none;
+    padding: 6px;
+    border-radius: 3px;
+    outline: none;
+}
+
+.conteiner form button {
+    border: none;
+    padding: 7px 5px;
+    cursor: pointer;
+    margin-top: 5px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: rgb(82, 82, 82);
+}
+
+.conteiner form button:hover {
+  padding: 6px 4px;
+  background-color: rgb(192, 192, 192);
+}
+
+.aviso {
+    text-align: center;
+    margin: 5px;
+    font-size: 13px;
+    color: rgb(119, 119, 119);
+    background-color: #f100001c; /* Exemplo de cor de fundo */
+    border: 1px solid #ddd; /* Exemplo de borda */
+    width: fit-content;
+    padding: 2px;
+}
+
+
+.conteiner-diario {
+    background-color: rgba(17, 201, 214, 0.404);
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    width: 800px;
+}
+
+.conteiner-diario h1 {
+    color: rgb(75, 75, 75);
+}
+
+.conteiner-diario form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.conteiner-diario form > textarea{
+width: 450px;
+height: 130px;
+border: none;
+padding: 6px;
+border-radius: 3px;
+outline: none;
+resize: none;
+}
+
+.conteiner-diario form > button {
+    width: 50px;
+   margin: 0 auto;
+}
+
+
+.last_messages {
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    height: fit-content;
+    padding: 5px;
+    word-wrap: break-word;
+}
+
+.msgDate {
+    text-align: right;
+    padding: 8px 1px 1px 1px;
+}
+
+.last_messages p {
+    padding: 3px;
+}
