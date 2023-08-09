@@ -155,3 +155,34 @@ resize: none;
     border-radius: 5px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.24);
 }
+
+/*Filtered reports*/
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.message {
+    background-color: #7e5dca;
+    color: #fff;
+    padding: 30px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.date {
+    background-color: #eff1f0;
+    color: #313132;
+    padding: 5px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.back-link {
+    background-color: #7e5dca;
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
