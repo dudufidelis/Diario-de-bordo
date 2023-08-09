@@ -18,5 +18,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-include 'fechar_conexao.php';
+include 'close_connection.php';
 ?>

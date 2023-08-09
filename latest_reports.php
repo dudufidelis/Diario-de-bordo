@@ -1,16 +1,20 @@
 <?php
-include 'conexao.php';
+include 'connection.php';
 
-$date = date("Y-m-d");
+$today = date("Y-m-d");
+$yesterday = date("Y-m-d", strtotime("-1 day"));
 
-$sql = "SELECT data, mensagem FROM mensagens WHERE data = '$date'";
+$sql = "SELECT data, mensagem FROM mensagens WHERE data IN ('$today', '$yesterday')";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $data = $row["data"];
         $mensagem = $row["mensagem"];
-        $dataFormatada = date("d/m/y", strtotime($date));
+        
+        // Formatar as datas para exibição
+        $dataFormatada = date("d/m/y", strtotime($data));
+        
         echo "
         <div class='last_messages'> 
             <div>
@@ -23,9 +27,8 @@ if ($result->num_rows > 0) {
          ";
     }
 } else {
-    echo "<p>Nenhuma mensagem encontrada para hoje.</p>";
+    echo "<p>Nenhuma mensagem encontrada para hoje ou ontem.</p>";
 }
 
-include 'fechar_conexao.php';
+include 'close_connection.php';
 ?>
-

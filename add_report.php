@@ -1,11 +1,9 @@
 <?php
-include 'conexao.php';
+include 'connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensagem = $_POST["mensagem"];
     $data = date("Y-m-d");
-     // Formato de data aceito pelo MySQL
-    
     $sql = "INSERT INTO mensagens (data, mensagem) VALUES ('$data', '$mensagem')";
     if ($conn->query($sql) === TRUE) {
         header("Location: diario.php");
@@ -14,5 +12,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-include 'fechar_conexao.php';
+include 'close_connection';
 ?>

@@ -3,7 +3,7 @@ session_start();
 
 // Se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include 'conexao.php';
+    include 'connection.php';
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
@@ -20,8 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->get_result();
     $user = $result->fetch_assoc();
 
-    if ($user && $password === $user['password']) {
-        // Iniciar uma sessão
+    if ($user && password_verify($password, $user['password'])) {
+        // Autenticado com sucesso
         $_SESSION['loggedin'] = true;
         
         // Redirecionar para diario.php
