@@ -4,6 +4,7 @@ include 'connection.php';
 $today = date("Y-m-d");
 $yesterday = date("Y-m-d", strtotime("-1 day"));
 
+
 $sql = "SELECT data, mensagem FROM mensagens WHERE data IN ('$today', '$yesterday')";
 $result = $conn->query($sql);
 
@@ -30,5 +31,5 @@ if ($result->num_rows > 0) {
     echo "<p>Nenhuma mensagem encontrada para hoje ou ontem.</p>";
 }
 
-include 'close_connection.php';
+include 'fechar_conexao.php';
 ?>

@@ -8,31 +8,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $username = $_POST['username'];
-    $rawPassword = $_POST['password']; // Senha em texto claro
+    $rawPassword = $_POST['password'];
+    $confirmPassword = $_POST['confirm_password'];
 
-    // Hash da senha
-    $hashedPassword = password_hash($rawPassword, PASSWORD_DEFAULT);
-
-    // Inserir o usuário e a senha hash no banco de dados
-    $query = "INSERT INTO users_diario (username, password) VALUES (?, ?)";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("ss", $username, $hashedPassword);
-    $result = $stmt->execute();
-
-    if ($result) {
-        echo "Registro bem-sucedido!"; // Ou redirecionar para uma página de sucesso
+    // Verificar se as senhas coincidem
+    if ($rawPassword !== $confirmPassword) {
+        echo "As senhas não coincidem.";
     } else {
-        echo "Erro ao registrar: " . $conn->error;
+        $hashedPassword = password_hash($rawPassword, PASSWORD_DEFAULT);
+
+        $query = "INSERT INTO users_diario (username, password) VALUES (?, ?)";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("ss", $username, $hashedPassword);
+        $result = $stmt->execute();
+
+        if ($result) {
+            echo "Registro bem-sucedido!"; 
+        } else {
+            echo "Erro ao registrar: " . $conn->error;
+        }
+
+        $stmt->close();
     }
 
-    $stmt->close();
     $conn->close();
 }
 ?>
-
-
-
-
 
 <!DOCTYPE html>
 <html>
@@ -46,8 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         .container {
             width: 300px;
-            margin: auto;
-            padding: 20px;
+            margin: 50px auto;
+            padding: 30px;
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
@@ -55,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         .container h2 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 26px;
         }
 
         .form-group {
@@ -68,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .form-group input {
-            width: 100%;
+            width: 280px;
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 3px;
@@ -78,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             display: block;
             width: 100%;
             padding: 10px;
-            background-color: #007bff;
+            background-color: #7e5dca;
             color: #fff;
             border: none;
             border-radius: 3px;
@@ -86,8 +87,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .btn:hover {
-            background-color: #0056b3;
+            background-color: #8e5dca;
         }
+
     </style>
 </head>
 <body>
@@ -103,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
-                <label for="confirm_password">Confirme a Senha:</label>
+                <label for="confirm_password">Confirme a senha:</label>
                 <input type="password" id="confirm_password" name="confirm_password" required>
             </div>
             <button type="submit" class="btn">Registrar</button>

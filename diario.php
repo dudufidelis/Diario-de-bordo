@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: index.php"); // Redirecionar se não autenticado
+    header("Location: index.php");
     exit();
 }
 
@@ -24,13 +24,14 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 <button type="submit">Enviar</button>
         </form>
 
-        <h2>Últimas Mensagens</h2>
+        <h2>Últimos Relatos</h2>
+
         <?php include 'latest_reports.php'; ?>
+
         <div class="search">
-            <h2>Buscar Mensagem por Data</h2>
+            <h2>Buscar Relatos</h2>
             <form action="search_reports.php" method="post">
-                    <label for="data">Selecione a Data</label>
-                    <input type="date" id="date-input" name="data">
+                    <input type="date" id="date-input" name="data" placeholder="DD / MM / YY">
                 <button type="submit">Buscar Mensagem</button>
             </form>
         </div>
