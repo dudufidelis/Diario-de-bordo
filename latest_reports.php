@@ -17,7 +17,7 @@ if ($result->num_rows > 0) {
         $dataFormatada = date("d/m/y", strtotime($data));
         
         echo "
-        <div class='last_messages'> 
+        <div class='reports'> 
             <div>
                 <p>$mensagem</p>
             </div>

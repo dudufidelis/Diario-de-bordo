@@ -1,7 +1,14 @@
+:root {
+    --grey: #eff1f0;
+    --purple: #7e5dca;
+    --black: #313132;
+}
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 body {
@@ -13,6 +20,18 @@ body {
 h1, h2 {
     text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.11);
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--black);
+    border-radius: 10px;
+}
+
+/*Login*/
 
 .conteiner {
     background-color: rgba(97, 217, 253, 0.979);
@@ -81,19 +100,20 @@ h1, h2 {
     padding: 2px;
 }
 
+/*Diario de bordo*/
 
 .conteiner-diario {
-    background-color: rgba(97, 217, 253, 0.979);
     display: flex;
     gap: 15px;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
-    width: 630px;
+    width: 80%;
     height: fit-content;
     color: white;
-    border: 2px solid rgba(20, 163, 206, 0.555);
+    border-radius: 10px;
+    background-color: var(--black);
 }
 
 .conteiner-diario form {
@@ -105,32 +125,94 @@ h1, h2 {
 .conteiner-diario form > textarea{
 width: 450px;
 height: 100px;
-border: 1px solid rgba(119, 119, 119, 0.541);
+border: none;
 padding: 6px;
 border-radius: 3px;
 outline: none;
 resize: none;
+box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.conteiner-diario form > button {
+button {
     width: 100px;
-    margin: 0 auto;
     border: none;
     border-radius: 3px;
     padding: 5px;
     cursor: pointer;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.151);
+    margin: 0 auto;
 }
 
+button:hover {
+    background-color: rgb(228, 228, 228);
+}
 
-.last_messages {
+.header-diario {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header-diario a {
+    text-decoration: none;
+    color: var(--grey);
+    font-size: 45px;
+    position: absolute;
+}
+
+.header-diario h1 {
+    font-size: 48px;
+    margin-inline: auto;
+    border-bottom: 1px solid rgba(206, 206, 206, 0.445);
+}
+
+.form-section {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   padding: 10px;
+}
+
+.add-form, .search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.search {
+    padding: 30px;
+}
+
+.search input {
+    margin-right: 20px ;
+}
+
+.add-form h2, .search-form h2 {
+    text-align: center;
+    width: 150px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  
+}
+
+.btn-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.reports {
     background-color: rgb(241, 241, 241);
     display: flex;
+    gap: 20px;
     flex-direction: column;
     justify-content: space-between;
     width: 500px;
     height: fit-content;
-    padding: 5px;
+    padding: 8px;
     word-wrap: break-word;
     border-radius: 5px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.315);
@@ -143,46 +225,57 @@ resize: none;
     padding: 8px 1px 1px 1px;
 }
 
-.last_messages p {
+.reports p {
     padding: 3px;
 }
 
 
 #date-input  {
-    padding: 5px;
+    padding: 6px;
     color: grey;
     border: none;
     border-radius: 5px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.24);
+    width: 140px;
 }
 
 /*Filtered reports*/
-.container {
-    max-width: 800px;
-    margin: 0 auto;
+
+.container-filter {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
     padding: 20px;
+    width: 80%;
+    height: fit-content;
+    color: white;
+    border-radius: 10px;
+    background-color: var(--black);
 }
 
-.message {
-    background-color: #7e5dca;
-    color: #fff;
+.filter-header {
+    background-color: var(--purple);
+    display: flex;
+    margin: 30px;
+    width: 800px;
     padding: 30px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
+    color: var(--grey);
+    position: relative;
 }
 
-.date {
-    background-color: #eff1f0;
-    color: #313132;
-    padding: 5px;
-    text-align: center;
-    border-radius: 3px;
+.filter-header h2 {
+    margin-inline: auto;
+    font-size: 30px;
 }
 
-.back-link {
-    background-color: #7e5dca;
-    margin-top: 20px;
-    color: #fff;
+.filter-header a {
     text-decoration: none;
-    font-weight: bold;
+    position: absolute;
+    color: var(--black);
+    background-color: var(--grey);
+    padding: 8px;
+    border-radius: 5px;
 }
