@@ -18,6 +18,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Braah+One&family=Josefin+Sans:ital,wght@0,500;0,700;1,500;1,700&family=Lilita+One&family=Signika+Negative:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="js/script.js" defer></script>
     <title>Diário de Bordo</title>
 </head>
 <body>
@@ -30,10 +31,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             <div class="add-form">
                 <h2>Adicionar</h2>
                 <form action="add_report.php" method="post">
-                    <textarea type="text" name="mensagem" placeholder="Deixe sua mensagem aqui!"></textarea>
+                    <textarea id="inputTextArea" type="text" name="mensagem" placeholder="Deixe sua mensagem aqui!"></textarea>
                     <div class="btn-section">
                         <button type="submit">Salvar</button>
-                        <button onclick="infoBatch()">Batch</button>
+                        <button id="btn-batch">Batch</button>
                     </div>
                 </form>
             </div>
