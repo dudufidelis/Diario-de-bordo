@@ -24,7 +24,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <body>
     <div class="conteiner-diario">
         <div class="header-diario">
-            <a href="logout.php" class="material-symbols-outlined"> Keyboard_backspace </a>
+            <a href="menu.php" class="material-symbols-outlined"> Keyboard_backspace </a>
             <h1>Diário de Bordo</h1>
         </div>
         <div class="form-section">

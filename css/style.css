@@ -103,6 +103,52 @@ h1, h2 {
     border-radius: 5px;
 }
 
+/*Menu apps*/
+
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: 10% auto;
+    width: 100%;
+    justify-content: center;
+    gap: 50px;
+}
+
+.container a {
+    text-decoration: none;
+    color: black;
+}
+
+.card {
+    width: 300px;
+    height: 230px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgba(128, 128, 128, 0.103);
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px rgba(217,217,217,1);
+    cursor: pointer;
+    text-align: center;
+}
+
+.card i {
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: ease 500ms;
+}
+
+
 /*Diario de bordo*/
 
 .conteiner-diario {
@@ -126,14 +172,14 @@ h1, h2 {
 }
 
 .conteiner-diario form > textarea{
-width: 450px;
-height: 100px;
-border: none;
-padding: 6px;
-border-radius: 3px;
-outline: none;
-resize: none;
-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.24);
+    width: 450px;
+    height: 100px;
+    border: none;
+    padding: 6px;
+    border-radius: 3px;
+    outline: none;
+    resize: none;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 button {
