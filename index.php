@@ -22,6 +22,9 @@
     </div>
 
     <div class="conteiner">
+        <span class="material-symbols-outlined">
+            person
+        </span>
         <form action="login.php" method="post">
                 <input type="text" name="username" placeholder="Usuário">        
                 <input type="password" name="password" placeholder="Senha">

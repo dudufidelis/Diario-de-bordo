@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['loggedin'] = true;
         
         // Redirecionar para diario.php
-        header("Location: diario.php");
+        header("Location: menu.php");
         exit();
     } else {
         header("Location: index.php?error=invalid_credentials");

@@ -13,3 +13,11 @@ function infoBatch() {
     const inputTextArea = document.querySelector("#inputTextArea");
     inputTextArea.value = `Batch-OK - Data Batch ${formattedDate} - PDV-OK - RUB-OK - Salvas-OK - sas77/sas08/sas24-OK - R.CARTÃO-OK - R.SACOLA-OK - ETIQUETA-OK`;
 }
+
+function validateForm() {
+    const message = document.getElementById("inputTextArea").value;
+    if (message.trim() === "") {
+        alert("A mensagem não pode estar vazia.");
+        return false;
+    }
+}

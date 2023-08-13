@@ -22,17 +22,21 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 <body>
 
     <div class="container">
+        <div class="header">
+            <h1>Portal Cpd227</h1>
+            <a href="logout.php">Sair</a>
+        </div>
         <a href="diario.php">
             <div class="card">
                 <i class="material-symbols-outlined"> menu_book </i>
-                <h3>Diario de bordo</h3>
+                <h3>Diário de bordo</h3>
                 <p>Compartilhe com a equipe os acontecimentos e as próximas novidades.</p>
             </div>
         </a>
         <a href="temp.php">
             <div class="card">
                 <i class="material-symbols-outlined"> inventory_2 </i>
-                <h3>Estoque CPD</h3>
+                <h3>Estoque</h3>
                 <p>Gestão de Equipamentos e Suprimentos Disponíveis.</p>
             </div>
         </a>
@@ -44,6 +48,5 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             </div>
         </a>
     </div>
-
 </body>
 </html>

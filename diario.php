@@ -30,7 +30,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
         <div class="form-section">
             <div class="add-form">
                 <h2>Adicionar</h2>
-                <form action="add_report.php" method="post">
+                <form action="add_report.php" method="post" onsubmit="return validateForm();">
                     <textarea id="inputTextArea" type="text" name="mensagem" placeholder="Deixe sua mensagem aqui!"></textarea>
                     <div class="btn-section">
                         <button type="submit">Salvar</button>
