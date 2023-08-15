@@ -2,6 +2,8 @@
     --grey: #eff1f0;
     --purple: #7e5dca;
     --black: #313132;
+    --border: 1px solid #8080801a;
+    --shadow: 1px 1px 2px #d9d9d9;
 }
 
 * {
@@ -148,7 +150,6 @@ body {
     cursor: pointer;
     text-align: center;
 }
-
 .card i {
     font-size: 70px;
     margin-bottom: 10px;
@@ -167,145 +168,77 @@ body {
 
 /*Diario de bordo*/
 
-.conteiner-diario {
-    display: flex;
-    gap: 15px;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px auto;
-    padding: 20px;
-    width: 80%;
-    height: fit-content;
-    color: white;
-    border-radius: 10px;
-    background-color: var(--black);
-}
-
-.conteiner-diario form {
+.container-diario {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-.conteiner-diario form > textarea{
-    width: 450px;
-    height: 100px;
-    border: none;
-    padding: 6px;
-    border-radius: 3px;
-    outline: none;
-    resize: none;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-.conteiner-diario form > textarea::placeholder {
-   
-}
-
-button {
-    width: 100px;
-    border: none;
-    border-radius: 3px;
-    padding: 5px;
-    cursor: pointer;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.151);
-    margin: 0 auto;
-}
-
-button:hover {
-    background-color: rgb(228, 228, 228);
+    justify-content: center;
+    gap: 30px;
+    width: 800px;
+    margin: 10px auto;
+    height: auto;
+    padding: 30px;
 }
 
 .header-diario {
     display: flex;
-    justify-content: center;
     justify-content: space-between;
-    width: 100%;
+    border: var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 25px;
 }
 
 .header-diario a {
     text-decoration: none;
-    color: var(--grey);
-    font-size: 45px;
-    position: absolute;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 78, 78);
+    border-radius: 7px;
+    line-height: normal;
+    padding-inline: 3px;
+    transition: 1s;
 }
 
-.header-diario h1 {
-    font-size: 48px;
-    margin-inline: auto;
-    border-bottom: 1px solid rgba(206, 206, 206, 0.445);
+.header-diario a:hover {
+    background-color: rgb(230, 6, 6);
+    color: rgb(199, 199, 199);
 }
 
-.form-section {
-   display: flex;
-   justify-content: center;
-   width: 100%;
-   padding: 10px;
-}
-
-.add-form, .search-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 10px;
-}
-
-.search {
+.add-form {
     padding: 30px;
+    border: var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
 }
 
-.search input {
-    margin-right: 20px ;
-}
-
-.add-form h2, .search-form h2 {
+.add-form h2 {
+    margin-bottom: 15px;
     text-align: center;
-    width: 150px;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-  
+}
+
+.add-form textarea {
+    width: 100%;
+    height: 100px;
+    border: var(--border);
+    padding: 6px;
+    border-radius: 3px;
+    outline: none;
+    resize: none;
+    box-shadow: var(--shadow);
+    font-size: 15px;
+}
+
+.add-form button {
+    padding: 5px;
+    border: var(--border);
+    box-shadow: var(--shadow);
 }
 
 .btn-section {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.reports {
-    background-color: rgb(241, 241, 241);
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
     justify-content: space-between;
-    width: 500px;
-    height: fit-content;
-    padding: 8px;
-    word-wrap: break-word;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.315);
-    color: rgb(65, 65, 65);
-}
-
-
-.msgDate {
-    text-align: right;
-    padding: 8px 1px 1px 1px;
-}
-
-.reports p {
-    padding: 3px;
-}
-
-
-#date-input  {
-    padding: 6px;
-    color: grey;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.24);
-    width: 140px;
+    width: 30%;
+    margin: 10px auto;
 }
 
 /*Filtered reports*/

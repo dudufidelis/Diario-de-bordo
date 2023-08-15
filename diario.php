@@ -22,32 +22,33 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <title>Diário de Bordo</title>
 </head>
 <body>
-    <div class="conteiner-diario">
+    <div class="container-diario">
         <div class="header-diario">
-            <a href="menu.php" class="material-symbols-outlined"> Keyboard_backspace </a>
             <h1>Diário de Bordo</h1>
+            <a href="menu.php" class="material-symbols-outlined"> close </a>
         </div>
-        <div class="form-section">
+      
             <div class="add-form">
-                <h2>Adicionar</h2>
+                <h2>Adicionar relato</h2>
                 <form action="add_report.php" method="post" onsubmit="return validateForm();">
-                    <textarea id="inputTextArea" type="text" name="mensagem" placeholder="Deixe sua mensagem aqui!"></textarea>
+                    <textarea id="inputTextArea" type="text" name="mensagem" placeholder="Escreva aqui!"></textarea>
                     <div class="btn-section">
                         <button type="submit">Salvar</button>
                         <button id="btn-batch">Batch</button>
                     </div>
                 </form>
             </div>
+        
             <div class="search-form">
                 <h2>Buscar</h2>
-                    <form action="search_reports.php" method="post">
+                <form action="search_reports.php" method="post">
                     <div class="search">
                         <input type="date" id="date-input" name="data" placeholder="DD / MM / YY">
                         <button type="submit">Procurar</button>
                     </div>
-                    </form>
+                </form>
             </div>
-        </div>
+        
         <h2>Últimos Relatos</h2>
         <?php include 'latest_reports.php'; ?>
     </div>
