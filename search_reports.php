@@ -12,8 +12,8 @@
 <body>
     <div class="container-filter">
         <div class="filter-header">
-            <a class="back-link" href="diario.php" class="material-symbols-outlined"> Voltar </a>
             <h2>Mensagens Filtradas por Data</h2>
+            <a href="diario.php" class="material-symbols-outlined" class="exit-btn"> close </a>
         </div>
         
         <?php

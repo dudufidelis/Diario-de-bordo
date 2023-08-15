@@ -185,7 +185,7 @@ body {
     border: var(--border);
     border-radius: 10px;
     box-shadow: var(--shadow);
-    padding: 25px;
+    padding: 20px;
 }
 
 .header-diario a {
@@ -196,7 +196,7 @@ body {
     border-radius: 7px;
     line-height: normal;
     padding-inline: 3px;
-    transition: 1s;
+    transition: 0.5s;
 }
 
 .header-diario a:hover {
@@ -205,7 +205,7 @@ body {
 }
 
 .add-form {
-    padding: 30px;
+    padding: 20px;
     border: var(--border);
     border-radius: 10px;
     box-shadow: var(--shadow);
@@ -229,55 +229,123 @@ body {
 }
 
 .add-form button {
-    padding: 5px;
-    border: var(--border);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    color: rgb(49, 49, 49);
+    font-weight: bolder;
     box-shadow: var(--shadow);
+    transition: 0.5s;
+    margin-top: 20px;
+}
+
+.add-form button:hover {
+  background-color: rgb(192, 192, 192);
 }
 
 .btn-section {
     display: flex;
     justify-content: space-between;
-    width: 30%;
+    width: 35%;
     margin: 10px auto;
+}
+
+.header-reports {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+}
+
+.header-reports button {
+    border: none;
+    padding: 6px;
+    cursor: pointer;
+    border-radius: 3px;
+    color: rgb(49, 49, 49);
+    font-weight: bolder;
+    box-shadow: var(--shadow);
+    transition: 0.5s;
+}
+
+.header-reports button:hover {
+    background-color: rgb(192, 192, 192);
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form h2 {
+    margin-right: 9px;
+}
+
+.search-form input {
+    border: 1px solid #a1a1a1;
+    border-radius: 5px;
+    padding: 4px;
+    margin-right: 3px;
+}
+
+.reports {
+    display: flex;
+    flex-direction: column;
+    
+    border: var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 10px;
+}
+
+.msgDate {
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 15px;
 }
 
 /*Filtered reports*/
 
 .container-filter {
     display: flex;
-    gap: 15px;
     flex-direction: column;
-    align-items: center;
-    margin: 20px auto;
-    padding: 20px;
-    width: 80%;
-    height: fit-content;
-    color: white;
-    border-radius: 10px;
-    background-color: var(--black);
+    justify-content: center;
+    gap: 30px;
+    width: 800px;
+    margin: 10px auto;
+    height: auto;
+    padding: 30px;
 }
 
 .filter-header {
-    background-color: var(--purple);
     display: flex;
-    margin: 30px;
-    width: 800px;
-    padding: 30px;
-    border-radius: 8px;
-    color: var(--grey);
-    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    border: var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: 20px;
 }
 
-.filter-header h2 {
-    margin-inline: auto;
-    font-size: 30px;
-}
 
 .filter-header a {
     text-decoration: none;
-    position: absolute;
-    color: var(--black);
-    background-color: var(--grey);
-    padding: 8px;
-    border-radius: 5px;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 78, 78);
+    border-radius: 7px;
+    line-height: normal;
+    padding-inline: 3px;
+    transition: 0.5s;
+}
+
+.filter-header a:hover {
+    background-color: rgb(230, 6, 6);
+    color: rgb(199, 199, 199);
 }

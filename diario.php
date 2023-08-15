@@ -25,7 +25,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <div class="container-diario">
         <div class="header-diario">
             <h1>Diário de Bordo</h1>
-            <a href="menu.php" class="material-symbols-outlined"> close </a>
+            <a href="menu.php" class="material-symbols-outlined" class="exit-btn"> close </a>
         </div>
       
             <div class="add-form">
@@ -39,18 +39,20 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
                 </form>
             </div>
         
-            <div class="search-form">
-                <h2>Buscar</h2>
-                <form action="search_reports.php" method="post">
-                    <div class="search">
-                        <input type="date" id="date-input" name="data" placeholder="DD / MM / YY">
-                        <button type="submit">Procurar</button>
-                    </div>
-                </form>
+            <div class="header-reports">
+                <h2>Últimos Relatos</h2>
+                <div class="search-form">
+                    <h2>Filtrar/data:</h2>
+                    <form action="search_reports.php" method="post">
+                        <div class="search">
+                            <input type="date" id="date-input" name="data" placeholder="DD / MM / YY">
+                            <button type="submit">Filtrar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        
-        <h2>Últimos Relatos</h2>
-        <?php include 'latest_reports.php'; ?>
+                <?php include 'latest_reports.php'; ?>
+        </div>
     </div>
     
 </body>
