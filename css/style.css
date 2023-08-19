@@ -30,60 +30,64 @@ body {
 
 /*Login*/
 
-.conteiner {
-    background-color: rgba(63, 67, 255, 0.979);
+.login-conteiner {
+    background: rgb(34,193,195);
+    background: linear-gradient(93deg, rgba(34,193,195,1) 0%, rgba(45,77,253,1) 100%);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 60px auto;
+    width: 60%;
+    height: 70vh;
+}
+
+.login-img {
+    
+}
+
+.login-area form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 5px;
-    margin: 60px auto;
-    width: 250px;
-    height: 300px;
+    justify-content: center;
+    gap: 5px;
 }
 
-.conteiner span {
-    font-size: 66px;
-    padding: 10px;
-    color: white;
-    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.185);
-}
-
-.conteiner form {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 20px;
-}
-
-.conteiner form ::placeholder {
-    font-size: 12px;
-    text-align: center;
-}
-
-
-.conteiner form input {
-    width: 100;
+.login-area input {
+    width: 180px;
+    height: 25px;
     border: none;
-    padding: 6px;
     border-radius: 3px;
+    padding: 5px;
     outline: none;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.253);
+
 }
 
-.conteiner form button {
-    border: none;
-    padding: 7px 5px;
+.login-area input:focus {
+
+}
+
+.login-area button {
     cursor: pointer;
-    margin-top: 5px;
+    width: 80px;
+    height: 25px;
+    border: none;
     border-radius: 3px;
-    font-weight: bold;
-    color: rgb(82, 82, 82);
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.253);
+    padding: 5px;
 }
 
-.conteiner form button:hover {
-  padding: 6px 4px;
-  background-color: rgb(192, 192, 192);
+.login-area {
+    display: flex;
+    margin-top: 15%;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
 }
 
 .aviso {
