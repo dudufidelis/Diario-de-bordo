@@ -1,10 +1,24 @@
 <?php
 session_start();
-
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+if (!isset($_SESSION['user_id'])) {
     header("Location: index.php");
     exit();
-} 
+}
+include('/Diario-de-bordo/conections/connection.php');
+
+// Função para deslogar
+function logout()
+{
+    session_unset();
+    session_destroy();
+    header("Location: index.php");
+    exit();
+}
+
+if (isset($_GET['logout'])) {
+    logout();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +38,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     <div class="container">
         <div class="header">
             <h1>Portal Cpd227</h1>
-            <a href="logout.php">Sair</a>
+            <a href="?logout">Sair</a>
         </div>
         <a href="diario.php">
             <div class="card">

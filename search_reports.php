@@ -19,23 +19,29 @@
         <?php
 
         include 'connection.php';
+        session_start();
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $data_busca = $_POST["data"];
             
-            $sql = "SELECT data, mensagem FROM mensagens WHERE data = '$data_busca'";
+            $sql = "SELECT m.date, m.mensagem, u.name
+                    FROM mensagens m
+                    INNER JOIN users_diario u ON m.user_id = u.id
+                    WHERE m.date = '$data_busca'";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    $data = $row["data"];
+                    $date = $row["date"];
                     $mensagem = $row["mensagem"];
-                    $dataFormatada = date("d/m/y", strtotime($data));
+                    $nomeUsuario = $row["name"];
+                    $dataFormatada = date("d/m/y", strtotime($date));
 
                     echo "
                     <div class='reports'>
                         <div>
                             <p>$mensagem</p>
+                            <p>Escrito por: $nomeUsuario</p>
                         </div>
                         <div>
                             <p class='msgDate'>$dataFormatada</p>
@@ -48,7 +54,9 @@
         }
 
         include 'close_connection.php';
+        
         ?>
+        
     </div>
 </body>
 </html>

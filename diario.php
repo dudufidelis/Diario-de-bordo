@@ -1,12 +1,4 @@
-<?php
-session_start();
 
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header("Location: index.php");
-    exit();
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -31,6 +23,13 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
             <div class="add-form">
                 <h2>Adicionar relato</h2>
                 <form action="add_report.php" method="post" onsubmit="return validateForm();">
+                    <?php
+                        session_start();
+                        if (isset($_SESSION['user_id'])) {
+                            $user_id = $_SESSION['user_id'];
+                            echo "<input type='hidden' name='user_id' value='$user_id'>";
+                        }
+                    ?>
                     <textarea id="inputTextArea" type="text" name="mensagem" placeholder="Escreva aqui!"></textarea>
                     <div class="btn-section">
                         <button type="submit">Salvar</button>

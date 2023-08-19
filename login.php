@@ -1,37 +1,27 @@
 <?php
 session_start();
 
-// Se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include 'connection.php';
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Erro na conexão: " . $conn->connect_error);
-    }
+    include('connection.php');
 
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $query = "SELECT id, username, password FROM users_diario WHERE username = ?";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $user = $result->fetch_assoc();
+    $sql = "SELECT * FROM users_diario WHERE username = '$username'";
+    $result = $conn->query($sql);
 
-    if ($user && password_verify($password, $user['password'])) {
-        // Autenticado com sucesso
-        $_SESSION['loggedin'] = true;
-        
-        // Redirecionar para diario.php
-        header("Location: menu.php");
-        exit();
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        if (password_verify($password, $row['password'])) {
+            $_SESSION['user_id'] = $row['id'];
+            header("Location: menu.php");
+        } else {
+            echo "Senha incorreta. Por favor, tente novamente.";
+        }
     } else {
-        header("Location: index.php?error=invalid_credentials");
+        echo "Matrícula não encontrada. Por favor, registre-se primeiro.";
     }
 
-    $stmt->close();
     $conn->close();
 }
 ?>
