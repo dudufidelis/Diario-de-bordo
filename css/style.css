@@ -42,15 +42,11 @@ body {
     height: 75vh;
 }
 
-.login-area, .login-img {
-    border: 5px double rgba(0, 119, 255, 0.555);
-    border-radius: 10px;
-}
-
 .login-img {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-right: 2px double rgba(0, 119, 255, 0.555);
 }
 
 .login-img img {
@@ -63,6 +59,7 @@ body {
     align-items: center;
     flex-direction: column;
     padding: 10px;  
+    border-left: 2px double rgba(0, 119, 255, 0.555);
 }
 
 .login-area form {

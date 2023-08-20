@@ -38,7 +38,7 @@ if (isset($_GET['logout'])) {
 
     <div class="container">
         <div class="header">
-            <h1>Portal Cpd227</h1>
+            <h1>TeamSync</h1>
             <a href="?logout">Sair</a>
         </div>
         <a href="diario.php">
@@ -51,7 +51,7 @@ if (isset($_GET['logout'])) {
         <a href="temp.php">
             <div class="card">
                 <i class="material-symbols-outlined"> inventory_2 </i>
-                <h3>Estoque</h3>
+                <h3>Estoque Cpd</h3>
                 <p>Gestão de Equipamentos e Suprimentos Disponíveis.</p>
             </div>
         </a>
