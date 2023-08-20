@@ -299,19 +299,24 @@ body {
 .reports {
     display: flex;
     flex-direction: column;
-    
     border: var(--border);
     border-radius: 10px;
     box-shadow: var(--shadow);
-    padding: 10px;
+    padding: 15px;
 }
 
 .msgDate {
-    text-align: right;
-    margin-bottom: 10px;
+    display: flex;
+    justify-content: right;
     font-size: 16px;
     width: 100%;
-    margin-top: 15px;
+    margin-top: 25px;
+}
+
+.msgDate p {
+    margin-inline: 3px;
+    font-size: 14px;
+    color: rgb(51, 51, 51);
 }
 
 /*Filtered reports*/

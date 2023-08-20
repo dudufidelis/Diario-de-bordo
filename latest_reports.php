@@ -23,10 +23,10 @@ if ($result->num_rows > 0) {
         echo "
         <div class='reports'> 
             <div>
-                <p>$mensagem</p>
-                <p>Escrito por: $nomeUsuario</p>
+                <p>$mensagem</p>    
             </div>
             <div class='msgDate'>
+                <p>$nomeUsuario -</p>
                 <p>$dataFormatada</p>
             </div>
         </div>
