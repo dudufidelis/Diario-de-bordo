@@ -31,63 +31,108 @@ body {
 /*Login*/
 
 .login-conteiner {
-    background: rgb(34,193,195);
-    background: linear-gradient(93deg, rgba(34,193,195,1) 0%, rgba(45,77,253,1) 100%);
+    background: rgb(22,169,224);
+    background: linear-gradient(353deg, rgba(22,169,224,1) 0%, rgba(45,147,253,1) 100%);
     display: grid;
     grid-template-columns: 50% 50%;
-    border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.685);
     margin: 60px auto;
     width: 60%;
-    height: 70vh;
+    height: 75vh;
+}
+
+.login-area, .login-img {
+    border: 5px double rgba(0, 119, 255, 0.555);
+    border-radius: 10px;
 }
 
 .login-img {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-img img {
+    width: 75%;
+}
+
+.login-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;  
 }
 
 .login-area form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 6px;
+}
+
+.login-area label {
+    color: white;
+    font-size: 28px;
+    margin-right: 10px;
+    transform: scaleX(-1);
+    margin-left: 5px;
+}
+
+.login-area div  {
+    display: flex;
+}
+
+.login-area h2 {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.363);
+    font-size: 26px;
+    padding-bottom: 10px;
+    width: 100%;
+    text-align: left;
 }
 
 .login-area input {
-    width: 180px;
-    height: 25px;
-    border: none;
+    cursor: text;
+    font-size: 14px;
+    padding: 7px 10px;
+    background-color: #fff;
+    border: 1px solid #d6d6e7;
     border-radius: 3px;
-    padding: 5px;
+    color: rgb(35, 38, 59);
+    box-shadow: inset 0 1px 4px 0 rgba(119, 122, 175, 0.3);
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
     outline: none;
-
 }
 
 .login-area input:focus {
+    border-color: #3c4fe0;
+    box-shadow: 0 1px 0 0 rgb(35 38 59 / 5%);
+}
 
+.btn-form {
+    display: flex;
+    gap: 16px;
 }
 
 .login-area button {
-    cursor: pointer;
     width: 80px;
-    height: 25px;
-    border: none;
-    border-radius: 3px;
-    padding: 5px;
+    padding: 7px;
+    border: 0px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgb(9, 128, 76);
+    box-shadow: rgb(19 170 82 / 40%) 0px 2px 3px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    transition: all 150ms ease-in-out 0s;
 }
 
-.login-area {
-    display: flex;
-    margin-top: 15%;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px;
-}
-
-.logo img {
-    width: 100px;
-    height: auto;
+.login-area button:hover {
+    background-color: rgb(17, 97, 73);
+    box-shadow: 0px 3px 2px rgb(19 170 82 / 40%);
 }
 
 .aviso {

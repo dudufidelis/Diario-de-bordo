@@ -17,16 +17,22 @@
     </div>
     <div class="login-conteiner">
       <div class="login-img">
-        <img src="#" alt="#">
+        <img src="assets/logo-white-transparency.png" alt="#">
       </div>
       <div class="login-area">
-          <div class="logo">
-              <img src="assets/logo-transparency.png" alt="TeamSync Logo">
-          </div>
           <form action="login.php" method="post">
-              <input type="text" name="username" placeholder="Usuário">        
-              <input type="password" name="password" placeholder="Senha">
+              <h2>Faça Login:</h2>
+              <div>
+                <input type="text" name="username" placeholder="Usuário">
+                <label for="password" class="material-symbols-outlined"> person </label>
+              </div>
+              <div>
+                <input type="password" name="password" placeholder="Senha">
+                <label for="password" class="material-symbols-outlined"> key </label>     
+              </div>
+              <div class="btn-form">
                 <button type="submit">Entrar</button>
+              </div>
           </form>
       </div>
     </div>
