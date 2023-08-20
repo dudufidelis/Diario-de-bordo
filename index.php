@@ -1,8 +1,3 @@
-<?php
-    if (isset($_GET['error']) && $_GET['error'] === "invalid_credentials") {
-        echo "<p>Credenciais inválidas. Por favor, verifique o usuário e a senha e tente novamente.</p>";
-    }
-    ?>
 
 <!doctype html>
 <html lang="pt-br">

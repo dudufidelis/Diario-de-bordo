@@ -1,39 +1,31 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include 'connection.php';
+    include('connection.php');
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Erro na conexão: " . $conn->connect_error);
-    }
-
+    $name = $_POST['name'];
     $username = $_POST['username'];
-    $rawPassword = $_POST['password'];
-    $confirmPassword = $_POST['confirm_password'];
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    // Verificar se as senhas coincidem
-    if ($rawPassword !== $confirmPassword) {
-        echo "As senhas não coincidem.";
+    $check_username = "SELECT id FROM users_diario WHERE usarname = '$username'";
+    $result = $conn->query($check_username);
+
+    if ($result->num_rows > 0) {
+        echo "Este username já está em uso. Por favor, escolha outra.";
     } else {
-        $hashedPassword = password_hash($rawPassword, PASSWORD_DEFAULT);
-
-        $query = "INSERT INTO users_diario (username, password) VALUES (?, ?)";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("ss", $username, $hashedPassword);
-        $result = $stmt->execute();
-
-        if ($result) {
-            echo "Registro bem-sucedido!"; 
+        $insert_query = "INSERT INTO users_diario (name, username, password) VALUES ('$name', '$username', '$password')";
+        if ($conn->query($insert_query) === TRUE) {
+            $conn->close();
+            header("Location: index.php");
+            exit();
         } else {
-            echo "Erro ao registrar: " . $conn->error;
+            echo "Erro ao cadastrar: " . $conn->error;
         }
-
-        $stmt->close();
     }
 
     $conn->close();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -99,16 +91,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>Registro</h2>
         <form action="register.php" method="post">
             <div class="form-group">
+                <label for="username">Nome:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
                 <label for="username">Nome de Usuário:</label>
                 <input type="text" id="username" name="username" required>
             </div>
             <div class="form-group">
                 <label for="password">Senha:</label>
                 <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <label for="confirm_password">Confirme a senha:</label>
-                <input type="password" id="confirm_password" name="confirm_password" required>
             </div>
             <button type="submit" class="btn">Registrar</button>
         </form>

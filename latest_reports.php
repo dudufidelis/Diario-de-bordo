@@ -5,21 +5,26 @@ $today = date("Y-m-d");
 $yesterday = date("Y-m-d", strtotime("-1 day"));
 
 
-$sql = "SELECT data, mensagem FROM mensagens WHERE data IN ('$today', '$yesterday')";
+$sql = "SELECT m.date, m.mensagem, u.name
+        FROM mensagens m
+        INNER JOIN users_diario u ON m.user_id = u.id
+        WHERE m.date IN ('$today', '$yesterday')";
 $result = $conn->query($sql);
+
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        $data = $row["data"];
+        $date = $row["date"];
         $mensagem = $row["mensagem"];
+        $nomeUsuario = $row["name"];
         
-        // Formatar as datas para exibição
-        $dataFormatada = date("d/m/y", strtotime($data));
+        $dataFormatada = date("d/m/y", strtotime($date));
         
         echo "
         <div class='reports'> 
             <div>
                 <p>$mensagem</p>
+                <p>Escrito por: $nomeUsuario</p>
             </div>
             <div class='msgDate'>
                 <p>$dataFormatada</p>
@@ -31,5 +36,5 @@ if ($result->num_rows > 0) {
     echo "<p>Nenhuma mensagem encontrada para hoje ou ontem.</p>";
 }
 
-include 'fechar_conexao.php';
+include 'close_connection.php';
 ?>
