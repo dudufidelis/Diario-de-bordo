@@ -38,15 +38,16 @@
                     $dataFormatada = date("d/m/y", strtotime($date));
 
                     echo "
-                    <div class='reports'>
+                    <div class='reports'> 
                         <div>
-                            <p>$mensagem</p>
-                            <p>Escrito por: $nomeUsuario</p>
+                            <p>$mensagem</p>    
                         </div>
-                        <div>
-                            <p class='msgDate'>$dataFormatada</p>
+                        <div class='msgDate'>
+                            <p>$nomeUsuario -</p>
+                            <p>$dataFormatada</p>
                         </div>
-                    </div>";
+                    </div>
+                     ";
                 }
             } else {
                 echo "<p>Nenhuma mensagem encontrada para essa data.</p>";
